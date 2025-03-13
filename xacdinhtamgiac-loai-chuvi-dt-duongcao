@@ -29,9 +29,10 @@
             cin>>x>>y>>z;
             if(check(x,y,z)){
                 cout<<"\n---------------------------------"<<endl;
-                cout<<"Chính Xác Là Tam Gíac\n----------------------------------";
+                cout<<"Chính Xác Là Tam Giác\n----------------------------------";
                 loaitamgiac(x,y,z);
                 chuvi(x,y,z);
+                dient(x,y,z);
             } else {
                 cout<<"Không Phải Tam Giác ";
             }
@@ -52,6 +53,8 @@
 
             cout<<"\n"<<round(ha)<<" "<<round(hb)<<" "<<round(hc);} else {
                 cout<<"";
-            }
+            } 
             return 0;
         }
+         
+        
