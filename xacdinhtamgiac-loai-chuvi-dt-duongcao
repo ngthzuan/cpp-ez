@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 #include<windows.h>
     using namespace std;
-       bool check(int a, int b, int c){
+       bool check(float a, float b, float c){
             return (a+b>c) && (a + c>b) && (b+c > a);
        }
-       void loaitamgiac(int a,int b,int c){
+       void loaitamgiac(float a,float b,float c){
             if (a == b && b == c ){
                 cout<<"\nLoại: Tam Giác Đều\n--------------------------------------------";
             } else if (a == b || a == c || b == c){
@@ -15,17 +15,20 @@
                 cout<<"\nLoại: Tam Giác Thường\n----------------------------------------------";
             }
        }
-       void chuvi(int a,int b,int c){
+       void chuvi(float a,float b,float c){
             cout<<"\nChu vi: "<<a + b + c<<"\n------------------------------------------";
     }
-        double dient(int a, int b, int c){
+        float dient(float a, float b, float c){
+            if (check(a,b,c)){
                 double p = (a + b + c)/2.0;
-                return sqrt(p*(p-a)*(p-b)*(p-c));
+                return sqrt(p*(p-a)*(p-b)*(p-c));} else{
+                    return -1;
+                }
 
         }
         int main() {
             SetConsoleOutputCP(65001);
-            int x,y,z;
+            float x,y,z;
             cin>>x>>y>>z;
             if(check(x,y,z)){
                 cout<<"\n---------------------------------"<<endl;
@@ -39,9 +42,9 @@
 
 
 
-            int a =x;
-            int b =y;
-            int c = z;
+            float a =x;
+            float b =y;
+            float c = z;
 
            double de = dient(x,y,z);
 
@@ -56,5 +59,3 @@
             } 
             return 0;
         }
-         
-        
