@@ -1,22 +1,32 @@
 #include <bits/stdc++.h>
     using namespace std;
         int main(){
-            int sao;
-                cin>>sao;
-                    for (int i = 1; i <= sao; i++){
-                        for (int j = 1; j <= i; j++ ){
-                            cout<<"*";
+        int n;
+        int d = 0;
+            cin>>n;
 
-                            }
-                            cout<<endl;
-                        }
-                    for (int s = sao - 1 ; s >=1; s--){
-
-                        cout << string(sao - s, ' '); // In khoảng trắng để căn giữa
-
-                        cout << string(2 * s - 1, '*') << endl; // In số lượng sao giảm dần
-
+                for (int i = n; i >= 1; i--){
+                    for (int j = 1; j <= i; j++){
+                        cout<<"*";
                     }
+                    cout<<endl;
+                }
 
-                    return 0;
-            }
+
+
+
+              for (int i = n; i >= 1; i-=2){
+                    for (int j = 1; j <= i; j++){
+                        cout<<"*";
+                    }
+                    cout<<endl; d++;
+                    for (int q = 1; q <= d ; q++){
+                        cout<<" ";
+                    }
+                }
+
+return 0;
+        }
+
+
+
