@@ -41,14 +41,14 @@ int d2 = 0;
 for (int i = n; i<=m; i++){
     if (ktnt(i)){
         a.push_back(i);
-        d1++;
+        
     if (maxscsnt<tcs(i)){
         maxscsnt = tcs(i);
         maxnt=i;
     }
     }
     if (ktscp(i)){
-            d2++;
+            
             b.push_back(i);
         if (mintcscp>tcs(i)){
         mintcscp = tcs(i);
@@ -64,12 +64,12 @@ for (int i = n; i<=m; i++){
     }
 
 
-cout<<"\n"<<d1<<" "<<maxnt<<"\n";
+cout<<"\n"<<a.size()<<" "<<maxnt<<"\n";
 for (int i=0; i<b.size(); i++){
 
     cout<<b[i]<<" ";
 }
-cout<<"\n"<<d2<<" "<<mincp;
+cout<<"\n"<<b.size()<<" "<<mincp;
 
     return 0;
 }
