@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s, x;
+
+    // Mở tệp để đọc chuỗi đầu vào
+    freopen("Bai3.inp", "r", stdin);
+    freopen("Bai3.out", "w", stdout);
+
+    getline(cin, s); // Đọc chuỗi từ tệp
+    int skt = s.size();
+
+    bool kt_hoa = true; // Cờ để kiểm tra có cần viết hoa ký tự tiếp theo không
+
+    for (int i = 0; i < skt; i++) {
+        // Bỏ qua khoảng trắng thừa trước dấu câu
+        if (s[i] == ' ' && (i + 1 < skt) &&
+            (s[i + 1] == ' ' || s[i + 1] == '.' || s[i + 1] == '?' || s[i + 1] == '!' || s[i + 1] == ',' || s[i + 1] == ';' || s[i + 1] == ':')) {
+            continue;    //Bỏ qua kí tự này mà không thêm vào chuổi x.
+        }
+
+        // Thêm khoảng trắng sau dấu câu nếu thiếu
+        if ((s[i] == '.' || s[i] == '?' || s[i] == '!' || s[i] == ':') && i + 1 < skt) {
+            x += s[i];
+            if (s[i + 1] != ' ') {
+                x += ' '; // Thêm khoảng trắng sau dấu câu nếu thiếu
+            }
+            kt_hoa = true; // Bật cờ viết hoa ký tự tiếp theo
+        } else if ((s[i] == ',' || s[i] == ';') && i + 1 < skt) {
+            x += s[i];
+            if (s[i + 1] != ' ') {
+                x += ' '; // Thêm khoảng trắng sau dấu câu nếu thiếu
+            }
+        } else if (kt_hoa && isalpha(s[i])) { // Viết hoa ký tự đầu câu
+            x += toupper(s[i]);
+            kt_hoa = false; // Tắt cờ viết hoa
+        } else {
+            x += tolower(s[i]); // Viết thường các ký tự khác
+        }
+    }
+    }
+
+    // In kết quả ra màn hình
+    cout << x;
+
+    return 0;
+}
